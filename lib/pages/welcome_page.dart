@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flamingo_ebook_reader/config/app_assets.dart';
 import 'package:flutter_flamingo_ebook_reader/config/app_strings.dart';
+import 'package:flutter_flamingo_ebook_reader/pages/home_page.dart';
 
 import '../components/widgets/reusable_button.dart';
 
@@ -40,7 +41,15 @@ class WelcomePage extends StatelessWidget {
               child: ReusableButton(
                 text: AppStrings.startReading,
                 fontSize: 17,
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const HomePage();
+                      },
+                    ),
+                  );
+                },
               ),
             )
           ],
@@ -49,4 +58,3 @@ class WelcomePage extends StatelessWidget {
     );
   }
 }
-
