@@ -5,10 +5,12 @@ class ReusableRichText extends StatelessWidget {
     super.key,
     required this.firstText,
     required this.secondText,
+    this.headlineMedium = false,
   });
 
   final String firstText;
   final String secondText;
+  final bool headlineMedium;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class ReusableRichText extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: RichText(
         text: TextSpan(
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: headlineMedium ? Theme.of(context).textTheme.headlineMedium : Theme.of(context).textTheme.headlineSmall,
           children: [
             TextSpan(text: firstText),
             TextSpan(

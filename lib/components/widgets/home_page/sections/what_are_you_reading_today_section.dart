@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flamingo_ebook_reader/pages/details_section.dart';
 
 import '../../../../config/app_assets.dart';
 import '../../../../config/app_strings.dart';
@@ -18,6 +19,7 @@ class WhatAreYouReadingToday extends StatelessWidget {
         const ReusableRichText(
           firstText: AppStrings.whatAreYouReading,
           secondText: AppStrings.today,
+          headlineMedium: true,
         ),
         const SizedBox(
           height: 30,
@@ -31,7 +33,15 @@ class WhatAreYouReadingToday extends StatelessWidget {
                 title: AppStrings.book1Title,
                 author: AppStrings.book1Author,
                 rating: 4.9,
-                details: () {},
+                details: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return const DetailsPage();
+                      },
+                    ),
+                  );
+                },
                 read: () {},
               ),
               ReadingListCard(
@@ -52,4 +62,3 @@ class WhatAreYouReadingToday extends StatelessWidget {
     );
   }
 }
-

@@ -38,7 +38,7 @@ class BookRating extends StatelessWidget {
             rating.toString(),
             style: const TextStyle(
               fontSize: 12,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w900,
             ),
           )
         ],
